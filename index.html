@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="/www.css">
+		<title>rgz</title>
+		<style>
+			nav {
+				margin-top: 1rem;
+				margin-bottom: 2rem;
+			}
+
+			nav > table a {
+				padding-right: 1.6rem;
+				font-size: 1.15rem;
+				color: #343434;
+			}
+
+			nav > a > img {
+				float: left;
+			}
+
+			@media screen and (width <= 1250px) {
+				nav > a {
+					display: block;
+					width: max-content;
+					margin: 0 auto;
+				}
+
+				nav > a > img {
+					float: none;
+				}
+			}
+
+			/* To align the left side of navbar links with content below. */
+			#nav-spacer {
+				/* Size of <main> margin on one side - icon width. */
+				width: calc(15vw - 160px);
+			}
+
+			@media screen and (width <= 1250px) {
+				#nav-spacer {
+					display: none;
+				}
+
+				nav > table {
+					margin: 0 auto;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="/"><img src="/favicon.ico" alt="icon" width="160" height="160"></a>
+				<table>
+					<tr>
+						<td id="nav-spacer"></td>
+						<td><a href="tools.html">Tools</a></td>
+						<td><a href="blog.html">Blog</a></td>
+					</tr>
+				</table>
+			</nav>
+		</header>
+		<main>
+		</main>
+	</body>
+</html>

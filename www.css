@@ -1,0 +1,100 @@
+@font-face {
+	font-family: "fira-sans";
+	src: url("/fonts/fira-sans-regular.woff2");
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "fira-sans";
+	src: url("/fonts/fira-sans-bold.woff2");
+	font-style: normal;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: "fira-sans";
+	src: url("/fonts/fira-sans-ultra.woff2");
+	font-style: normal;
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: "fira-sans";
+	src: url("/fonts/fira-sans-italic.woff2");
+	font-style: italic;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "fira-sans";
+	src: url("/fonts/fira-sans-bolditalic.woff2");
+	font-style: italic;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: "fira-sans";
+	src: url("/fonts/fira-sans-ultraitalic.woff2");
+	font-style: italic;
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: "fira-mono";
+	src: url("/fonts/fira-mono-regular.woff2");
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "fira-mono";
+	src: url("/fonts/fira-mono-bold.woff2");
+	font-style: normal;
+	font-weight: 700;
+}
+
+* {
+ 	margin: 0;
+	padding: 0;
+}
+
+main {
+	max-width: 70%;
+	margin: 0 auto;
+}
+
+@media screen and (width <= 700px) {
+	main {
+		max-width: 95%;
+	}
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+	font-family: "fira-sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 1rem 0;
+}
+
+a, p {
+	font-size: 1.1rem;
+	line-height: 1.4;
+	margin-bottom: 0.5rem;
+}
+
+@media screen and (width <= 500px) {
+	a, p {
+		font-size: 1rem;
+	}
+}
+
+pre, code {
+	font-family: "fira-mono";
+	background-color: #f4f4f4;
+}
+
+pre {
+	margin: 1rem 0;
+}
