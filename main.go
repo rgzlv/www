@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"net"
 	"net/http"
@@ -76,25 +77,33 @@ func run() error {
 	if err != nil {
 		return err
 	}
-	uid, gid, err := getID(usr)
-	if err != nil {
-		return err
+	var uid int
+	var gid int
+	if usr != "" {
+		uid, gid, err = getID(usr)
+		if err != nil {
+			return err
+		}
 	}
 
 	if err := os.Chdir(root); err != nil {
 		return err
 	}
-	if err := syscall.Chroot(root); err != nil {
-		return err
+	if os.Getuid() == 0 {
+		if err := syscall.Chroot(root); err != nil {
+			return fmt.Errorf("chroot(): %w", err)
+		}
 	}
-	if err := unix.Setgid(gid); err != nil {
-		return err
-	}
-	if err := unix.Setgroups([]int{}); err != nil {
-		return err
-	}
-	if err := unix.Setuid(uid); err != nil {
-		return err
+	if usr != "" {
+		if err := unix.Setgid(gid); err != nil {
+			return fmt.Errorf("setgid(): %w", err)
+		}
+		if err := unix.Setgroups([]int{}); err != nil {
+			return fmt.Errorf("setgroups(): %w", err)
+		}
+		if err := unix.Setuid(uid); err != nil {
+			return fmt.Errorf("setuid(): %w", err)
+		}
 	}
 
 	handler := &handler{
