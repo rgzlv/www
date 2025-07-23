@@ -11,12 +11,6 @@
 				margin-bottom: 2rem;
 			}
 
-			nav > table a {
-				padding-right: 1.6rem;
-				font-size: 1.15rem;
-				color: #343434;
-			}
-
 			nav > a > img {
 				float: left;
 			}
@@ -33,6 +27,31 @@
 				}
 			}
 
+
+			nav > ul > li {
+				display: inline-block;
+				padding-right: 1.6rem;
+			}
+
+			nav > ul > li > a {
+				font-size: 1.15rem;
+				color: #343434;
+			}
+
+			@media screen and (width <= 1250px) {
+				nav > ul {
+					width: max-content;
+					max-width: 70%;
+					margin: 0 auto;
+				}
+			}
+
+			@media screen and (width <= 1250px) {
+				nav > ul {
+					max-width: 90%;
+				}
+			}
+
 			/* To align the left side of navbar links with content below. */
 			#nav-spacer {
 				/* Size of <main> margin on one side - icon width. */
@@ -43,10 +62,6 @@
 				#nav-spacer {
 					display: none;
 				}
-
-				nav > table {
-					margin: 0 auto;
-				}
 			}
 		</style>
 	</head>
@@ -54,13 +69,11 @@
 		<header>
 			<nav>
 				<a href="/"><img src="/favicon.ico" alt="icon" width="160" height="160"></a>
-				<table>
-					<tr>
-						<td id="nav-spacer"></td>
-						<td><a href="tools.html">Tools</a></td>
-						<td><a href="blog.html">Blog</a></td>
-					</tr>
-				</table>
+				<div id="nav-spacer"></div>
+				<ul>
+					<li><a href="tools.html">Tools</a></li>
+					<li><a href="blog.html">Blog</a></li>
+				</ul>
 			</nav>
 		</header>
 		<main>
