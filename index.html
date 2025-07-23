@@ -27,6 +27,11 @@
 				}
 			}
 
+			nav > ul {
+				display: inline-block;
+				width: max-content;
+				margin-left: calc(15vw - 160px);
+			}
 
 			nav > ul > li {
 				display: inline-block;
@@ -40,9 +45,10 @@
 
 			@media screen and (width <= 1250px) {
 				nav > ul {
-					width: max-content;
+					display:block;
 					max-width: 70%;
 					margin: 0 auto;
+					padding-left: 40px;
 				}
 			}
 
@@ -51,25 +57,12 @@
 					max-width: 90%;
 				}
 			}
-
-			/* To align the left side of navbar links with content below. */
-			#nav-spacer {
-				/* Size of <main> margin on one side - icon width. */
-				width: calc(15vw - 160px);
-			}
-
-			@media screen and (width <= 1250px) {
-				#nav-spacer {
-					display: none;
-				}
-			}
 		</style>
 	</head>
 	<body>
 		<header>
 			<nav>
 				<a href="/"><img src="/favicon.ico" alt="icon" width="160" height="160"></a>
-				<div id="nav-spacer"></div>
 				<ul>
 					<li><a href="tools.html">Tools</a></li>
 					<li><a href="blog.html">Blog</a></li>
